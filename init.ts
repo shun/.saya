@@ -40,6 +40,7 @@ setupSayaCompletion({
     createBufferWordSource({ minPrefixLength: 1 }),
   ],
 });
+saya.keymap.set("insert", "<C-h>", "\x08");
 setupLspPlugin();
 setupAgentPlugin();
 
