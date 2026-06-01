@@ -70,6 +70,12 @@ declare global {
         context: SayaCompletionContext,
     ) => SayaCompletionCandidate[];
 
+    interface SayaCompletionRankingOptions {
+        sourcePriority?: string[];
+        deepCompletionPriority?: "default" | "afterDirect" | "last";
+        duplicateLabels?: "default" | "preferFirstSource";
+    }
+
     interface SayaCompletionOptions {
         commandName?: string;
         key?: string;
@@ -79,6 +85,7 @@ declare global {
         sources?: SayaCompletionSource[];
         filters?: SayaCompletionFilter[];
         sorters?: SayaCompletionSorter[];
+        ranking?: SayaCompletionRankingOptions;
     }
 
     interface SayaCompletionShowRequest {

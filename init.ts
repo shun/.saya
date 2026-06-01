@@ -20,6 +20,7 @@ setupOptions();
 setupTokyoNightTheme();
 
 setupBundledPlugins();
+setupLspPlugin();
 setupSayaCompletion({
   key: "<C-x>",
   keys: {
@@ -31,6 +32,12 @@ setupSayaCompletion({
     pagePrevious: ["<PageUp>"],
   },
   autoTrigger: true,
+  sourceTimeoutMs: 5000,
+  ranking: {
+    sourcePriority: ["lsp", "path", "buffer"],
+    deepCompletionPriority: "last",
+    duplicateLabels: "preferFirstSource",
+  },
   sources: [
     createLspCompletionSource({ minPrefixLength: 1 }),
     createPathCompletionSource({
@@ -41,7 +48,6 @@ setupSayaCompletion({
   ],
 });
 saya.keymap.set("insert", "<C-h>", "\x08");
-setupLspPlugin();
 setupAgentPlugin();
 
 setupSelectorCommands();
