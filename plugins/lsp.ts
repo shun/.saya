@@ -1,4 +1,4 @@
-import { setupSayaLspClient } from "/Users/skudo/ghq/github.com/shun/saya_ws/saya.git/.wt/dev/plugins/bundled/lsp-client/index.ts";
+import { setupSayaLspClient } from "~/ghq/github.com/shun/saya_ws/saya.git/.wt/dev/plugins/bundled/lsp-client/index.ts";
 
 export function setupLspPlugin() {
   setupSayaLspClient({

@@ -223,6 +223,18 @@ declare global {
         level?: "error" | "warn" | "info" | "debug" | "trace";
     }
 
+    interface SayaFtPluginDefinition {
+        extensions?: string[];
+        options?: Partial<SayaStartupOptionsSurface>;
+        enabled?: boolean;
+    }
+
+    interface SayaStartupFtPluginSurface {
+        enabled: boolean;
+        set(filetype: string, definition: SayaFtPluginDefinition): void;
+        disable(filetype: string): void;
+    }
+
     interface SayaPluginUseSpec {
         name?: string;
         local?: string;
@@ -296,6 +308,7 @@ declare global {
         events: SayaStartupEventsSurface;
         theme: SayaStartupThemeSurface;
         log: SayaStartupLogSurface;
+        ftplugin: SayaStartupFtPluginSurface;
         plugins: SayaStartupPluginsSurface;
         buffer: SayaRuntimeBufferSurface;
         editor: SayaRuntimeEditorSurface;

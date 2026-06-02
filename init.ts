@@ -10,13 +10,21 @@ import {
   createLspCompletionSource,
   createPathCompletionSource,
   setupSayaCompletion,
-} from "/Users/skudo/ghq/github.com/shun/saya_ws/saya.git/.wt/dev/plugins/bundled/completion/index.ts";
+} from "~/ghq/github.com/shun/saya_ws/saya.git/.wt/dev/plugins/bundled/completion/index.ts";
 import { setupLspPlugin } from "./plugins/lsp.ts";
 import { setupAgentPlugin } from "./plugins/agent.ts";
 import { setupTokyoNightTheme } from "./theme/tokyo-night.ts";
 
 setupLog();
 setupOptions();
+saya.ftplugin.set("go", {
+  extensions: ["go"],
+  options: {
+    expandtab: false,
+    softtabstop: 0,
+    shiftwidth: 0,
+  },
+});
 setupTokyoNightTheme();
 
 setupBundledPlugins();
