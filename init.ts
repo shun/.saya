@@ -10,7 +10,7 @@ import {
   createLspCompletionSource,
   createPathCompletionSource,
   setupSayaCompletion,
-} from "~/ghq/github.com/shun/saya_ws/saya.git/.wt/dev/plugins/bundled/completion/index.ts";
+} from "$SAYA_HOME/runtime/plugins/bundled/completion/index.ts";
 import { setupLspPlugin } from "./plugins/lsp.ts";
 import { setupAgentPlugin } from "./plugins/agent.ts";
 import { setupTokyoNightTheme } from "./theme/tokyo-night.ts";

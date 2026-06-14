@@ -1,4 +1,4 @@
-import { setupSayaAgent } from "~/ghq/github.com/shun/saya_ws/saya.git/.wt/dev/plugins/saya-agent.ts";
+import { setupSayaAgent } from "$SAYA_HOME/runtime/plugins/bundled/agent/index.ts";
 
 export function setupAgentPlugin() {
   const config = setupSayaAgent({
