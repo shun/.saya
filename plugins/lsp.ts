@@ -15,8 +15,9 @@ export function setupLspPlugin() {
       tsx: "typescriptreact",
       mts: "typescript",
       cts: "typescript",
+      rs: "rust",
     },
-    trace: "messages",
+    trace: "off",
     positionEncoding: "utf-16",
     completionTriggerCharacters: [".", ":", ">", "/", "'", '"', "`"],
     ui: {
@@ -43,10 +44,25 @@ export function setupLspPlugin() {
         languages: ["go"],
         filePatterns: ["**/*.go"],
         rootMarkers: ["go.mod", ".git"],
-        trace: "messages",
+        trace: "off",
         positionEncoding: "utf-16",
         initializationOptions: {
           semanticTokens: true,
+        },
+      },
+      rust: {
+        name: "rust-analyzer",
+        command: "/opt/homebrew/bin/rust-analyzer",
+        languages: ["rust"],
+        filePatterns: ["**/*.rs"],
+        rootMarkers: ["Cargo.toml", "rust-project.json", ".git"],
+        trace: "off",
+        positionEncoding: "utf-16",
+        initializationOptions: {
+          cargo: {
+            allFeatures: true,
+          },
+          checkOnSave: false,
         },
       },
       typescript: {
@@ -77,7 +93,7 @@ export function setupLspPlugin() {
           "package.json",
           ".git",
         ],
-        trace: "messages",
+        trace: "off",
         positionEncoding: "utf-16",
         initializationOptions: {},
       },

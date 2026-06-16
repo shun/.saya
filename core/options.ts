@@ -1,5 +1,6 @@
 export function setupOptions() {
   saya.options.number = true;
+  saya.options.hlsearch = true;
   saya.options.tabstop = 4;
   saya.options.shiftwidth = 4;
   saya.options.softtabstop = 4;

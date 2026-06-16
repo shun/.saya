@@ -25,6 +25,14 @@ saya.ftplugin.set("go", {
     shiftwidth: 0,
   },
 });
+saya.ftplugin.set("rust", {
+  extensions: ["rs"],
+  options: {
+    expandtab: true,
+    softtabstop: 4,
+    shiftwidth: 4,
+  },
+});
 setupTokyoNightTheme();
 
 setupBundledPlugins();
@@ -40,14 +48,18 @@ setupSayaCompletion({
     pagePrevious: ["<PageUp>"],
   },
   autoTrigger: true,
-  sourceTimeoutMs: 5000,
+  autoTriggerDelayMs: 250,
+  sourceTimeoutMs: 800,
   ranking: {
     sourcePriority: ["lsp", "path", "buffer"],
     deepCompletionPriority: "last",
     duplicateLabels: "preferFirstSource",
   },
   sources: [
-    createLspCompletionSource({ minPrefixLength: 1 }),
+    createLspCompletionSource({
+      minPrefixLength: 2,
+      includeDeepCompletions: false,
+    }),
     createPathCompletionSource({
       minPrefixLength: 1,
       triggerCharacters: ["/", "."],
