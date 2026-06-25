@@ -3,7 +3,11 @@ import { setupSayaLspClient } from "$SAYA_HOME/runtime/plugins/bundled/lsp-clien
 export function setupLspPlugin() {
   setupSayaLspClient({
     enableBufferEvents: true,
-    keymap: {},
+    keymap: {
+      hover: "K",
+      definition: "gd",
+      references: "gR",
+    },
     clientName: "saya-lsp",
     languageIdByExtension: {
       go: "go",
